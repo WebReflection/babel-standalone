@@ -190,6 +190,14 @@ export const availablePresets = {
       [require("babel-plugin-transform-regenerator"), { async: false, asyncGenerators: false }],
     ]
   },
+
+  // GJS, js 24 and mozjs24 preset
+  'mozjs24': {
+    plugins: [
+      require("babel-preset-mozjs24")
+    ]
+  },
+
 };
 
 export const version = Babel.version;
