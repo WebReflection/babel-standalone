@@ -47517,8 +47517,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                            if (typeof value !== "undefined" && value !== null) {
 	                                buffer += makeIndent(indentStr, objStack.length);
 	                                nonEmpty = true;
-	                                let key = isWord(prop) ? prop : escapeString(prop);
-	                                buffer += key + ":" + (indentStr ? ' ' : '') + value + ",";
+	                                const k = isWord(prop) ? prop : escapeString(prop);
+	                                buffer += k + ":" + (indentStr ? ' ' : '') + value + ",";
 	                            }
 	                        }
 	                    }
