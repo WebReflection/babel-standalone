@@ -843,8 +843,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	"use strict";
 
-	exports["default"] = function (instance, Constructor) {
-	  if (!(instance instanceof Constructor)) {
+	exports.__esModule = true;
+
+	exports.default = function (instance, Constructor) {
+	  if (!(Constructor.prototype && Constructor.prototype.__metaclass__ || instance instanceof Constructor)) {
 	    throw new TypeError("Cannot call a class as a function");
 	  }
 	};
