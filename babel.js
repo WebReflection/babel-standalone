@@ -846,7 +846,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.__esModule = true;
 
 	exports.default = function (instance, Constructor) {
-	  if (!(Constructor.prototype && Constructor.prototype.__metaclass__ || instance instanceof Constructor)) {
+	  if (!((Constructor.prototype && Constructor.prototype.__metaclass__) || instance instanceof Constructor)) {
 	    throw new TypeError("Cannot call a class as a function");
 	  }
 	};
@@ -16875,7 +16875,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	"use strict";
 
 	exports["default"] = function (instance, Constructor) {
-	  if (!(Constructor.prototype && Constructor.prototype.__metaclass__ || instance instanceof Constructor)) {
+	  if (!((Constructor.prototype && Constructor.prototype.__metaclass__) || instance instanceof Constructor)) {
 	    throw new TypeError("Cannot call a class as a function");
 	  }
 	};
@@ -32434,7 +32434,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	helpers.asyncToGenerator = _babelTemplate2["default"]("\n  (function (fn) {\n    return function () {\n      var gen = fn.apply(this, arguments);\n      return new Promise(function (resolve, reject) {\n        function step(key, arg) {\n          try {\n            var info = gen[key](arg);\n            var value = info.value;\n          } catch (error) {\n            reject(error);\n            return;\n          }\n\n          if (info.done) {\n            resolve(value);\n          } else {\n            return Promise.resolve(value).then(function (value) {\n              return step(\"next\", value);\n            }, function (err) {\n              return step(\"throw\", err);\n            });\n          }\n        }\n\n        return step(\"next\");\n      });\n    };\n  })\n");
 
-	helpers.classCallCheck = _babelTemplate2["default"]("\n  (function (instance, Constructor) {\n    if (!(instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n    }\n  });\n");
+	helpers.classCallCheck = _babelTemplate2["default"]("\n  (function (instance, Constructor) {\n    if (!((Constructor.prototype && Constructor.prototype.__metaclass__) || instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n    }\n  });\n");
 
 	helpers.createClass = _babelTemplate2["default"]("\n  (function() {\n    function defineProperties(target, props) {\n      for (var i = 0; i < props.length; i ++) {\n        var descriptor = props[i];\n        descriptor.enumerable = descriptor.enumerable || false;\n        descriptor.configurable = true;\n        if (\"value\" in descriptor) descriptor.writable = true;\n        Object.defineProperty(target, descriptor.key, descriptor);\n      }\n    }\n\n    return function (Constructor, protoProps, staticProps) {\n      if (protoProps) defineProperties(Constructor.prototype, protoProps);\n      if (staticProps) defineProperties(Constructor, staticProps);\n      return Constructor;\n    };\n  })()\n");
 
