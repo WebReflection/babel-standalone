@@ -20634,7 +20634,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        bareSuperNode.callee = t.memberExpression(superRef, t.identifier("call"));
 	      }
 	    } else {
-	      bareSuperNode = _babelHelperOptimiseCallExpression2["default"](t.callExpression(t.memberExpression(t.identifier("Object"), t.identifier("getPrototypeOf")), [this.classRef]), t.thisExpression(), bareSuperNode.arguments);
+	      bareSuperNode = _babelHelperOptimiseCallExpression2["default"](t.callExpression(t.memberExpression(t.identifier("imports.jsgtk.extended"), t.identifier("superProto")), [this.classRef]), t.thisExpression(), bareSuperNode.arguments);
 	    }
 
 	    var call = t.callExpression(this.file.addHelper("possibleConstructorReturn"), [t.thisExpression(), bareSuperNode]);
