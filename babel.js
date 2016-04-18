@@ -6064,12 +6064,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	      },
 
 	      ClassDeclaration: function ClassDeclaration(path) {
-	        var node = path.node;
-
-	        var ref = node.id || path.scope.generateUidIdentifier("class");
-
-	        path.replaceWith(t.variableDeclaration("let", [t.variableDeclarator(ref, t.toExpression(node))]));
-	      },
+					var node = path.node;
+					var ref = node.id || path.scope.generateUidIdentifier("class");
+					path.replaceWith(
+						t.variableDeclaration(
+							"let", [
+								t.variableDeclarator(
+									ref,
+									t.callExpression(
+										t.functionExpression(
+											null,
+											[],
+											t.blockStatement([
+												t.variableDeclaration(
+													"let", [
+														t.variableDeclarator(
+															ref,
+															t.toExpression(node)
+														)
+													]
+												),
+												t.returnStatement(
+													t.callExpression(
+														t.identifier("imports.jsgtk.extended.Class"),
+														[ref]
+													)
+												)
+											])
+										),
+										[]
+									)
+								)
+							]
+						)
+					)
+				},
 
 	      ClassExpression: function ClassExpression(path, state) {
 	        var node = path.node;
@@ -32772,12 +32801,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	                path.insertAfter(t.exportNamedDeclaration(null, [t.exportSpecifier(ref, t.identifier('default'))]));
 	            },
 	            ClassDeclaration: function ClassDeclaration(path) {
-	                var node = path.node;
-
-	                var ref = node.id || path.scope.generateUidIdentifier("class");
-
-	                path.replaceWith(t.variableDeclaration("let", [t.variableDeclarator(ref, t.toExpression(node))]));
-	            },
+								var node = path.node;
+								var ref = node.id || path.scope.generateUidIdentifier("class");
+								path.replaceWith(
+									t.variableDeclaration(
+										"let", [
+											t.variableDeclarator(
+												ref,
+												t.callExpression(
+													t.functionExpression(
+														null,
+														[],
+														t.blockStatement([
+															t.variableDeclaration(
+																"let", [
+																	t.variableDeclarator(
+																		ref,
+																		t.toExpression(node)
+																	)
+																]
+															),
+															t.returnStatement(
+																t.callExpression(
+																	t.identifier("imports.jsgtk.extended.Class"),
+																	[ref]
+																)
+															)
+														])
+													),
+													[]
+												)
+											)
+										]
+									)
+								)
+							},
 	            ClassExpression: function ClassExpression(path, state) {
 	                // Create a replacement for the class node if there is one. We do one pass to replace classes with
 	                // class decorators, and a second pass to process method decorators.

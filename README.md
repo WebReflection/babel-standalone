@@ -1,13 +1,14 @@
 babel-standalone
 ================
 
-babel-standalone is a standalone build of Babel for use in non-Node.js environments, including browsers. It's bundled with all the standard Babel plugins and presets.
+babel-standalone is a standalone build of Babel for use in non-Node.js environments, including browsers.
+It's bundled with all the standard Babel plugins and presets.
 
 
 
 This fork
 =========
-The current version of babel-standalone used in this specific fork is `GJS` oriented.
+The current version of babel-standalone used in this specific fork is `jsgtk` oriented.
 I have manually removed from the original uncompressed source all warnings generated and shown via [GJS](https://wiki.gnome.org/action/show/Projects/Gjs?action=show&redirect=Gjs) env.
 
 The minified version drops mostly only spaces and put back double (pointless) pharentesuis with assignments.
